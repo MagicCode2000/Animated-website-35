@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 80px;
+    color: white;
+    font-size: 24px;
+    z-index: 99;
+
+    opacity: 0;
+    animation: to-bottom 1s ease forwards;
+}
+header nav a{
+    font-size: 26px;
+    margin-left: 50px;
+    color: white;
+    transition: .3s;
+}
+header nav .active,
+header nav a:hover{
+    color: #0dafe0;
+}
+.Home{
+    min-height: 100vh;
+    background-image: url(./Assets/background.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0 80px;
+    overflow: hidden;
+}
+.text-box{
+    width: 50%;
+}
+.text-box h1{
+    color: #0dafe0;
+    font-size: 75px;
+    animation: to-right 1s ease forwards 1.7s;
+}
+.text-box h2{
+    color: white;
+    font-size: 60px;
+    animation: to-right 1s ease forwards 1.8s;
+}
+.text-box p{
+    margin: 30px 0;
+    font-size: 18px;
+    width: 75%;
+    line-height: 225%;
+    color: #bababa;
+    animation: to-right 1s ease forwards 1.9s;
+}
+.text-box .btn{
+    color: white;
+    width: 185px;
+    height: 66px;
+    font-size: 22px;
+    border: 2px solid #0dafe0;
+    background: transparent;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: .3s;
+    animation: to-right 1s ease forwards 2s;
+}
+.text-box .btn:hover{
+    color: black;
+    background-color: #0dafe0;
+    box-shadow: 0 0 15px #0dafe0;
+}
+.Home img{
+    position: absolute;
+    pointer-events: none;
+    width: 60vw;
+    right: 0;
+    top: 50%;
+    bottom: 50%;
+    margin: auto 0;
+}
+.text-box *{
+    opacity: 0;
+}
+/* keyframes */
+@keyframes to-bottom {
+    0%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes to-right {
+    0%{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes hand {
+    0%{
+        opacity: 0;
+        transform: translate(40%, 8%);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+.hand{
+    animation: hand 2s ease forwards;
+}
+.light{
+    opacity: 0;
+    animation: fade 1s ease forwards 1.3s;
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    0%{
+        transform: rotate(var(--deg));
+    }
+}
+#gear{
+    right: 8.5%;
+    top: 45%;
+    opacity: 0;
+    animation: rotate 28s linear infinite, fade 1s ease forwards 1.3s;
+}
+@keyframes objects {
+    0%{
+        opacity: 0;
+        transform: translateX(20%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.objects{
+    opacity: 0;
+    animation: objects 2s ease forwards 1.3s;
+}
